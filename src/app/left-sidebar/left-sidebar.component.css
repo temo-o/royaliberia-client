@@ -1,0 +1,29 @@
+.left-sidebar-wrapper{
+  padding: 0;
+  margin: 0;
+  width: 120px;
+  height: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+}
+
+.left-sidebar{
+  padding:0;
+  margin: 0;
+  list-style-type: none;
+  background-color: lightgray;
+  height: 100%;
+}
+
+.left-sidebar li{
+  padding: 10px;
+  margin: 0;
+  list-style-type: none;
+  cursor: pointer;
+  border-bottom: 1px solid white;
+}
+
+.left-sidebar li.active, .left-sidebar li:hover{
+  background-color: #3b82f6;
+}
