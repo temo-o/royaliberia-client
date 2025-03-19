@@ -25,7 +25,18 @@ export class ImageSequenceAnimatorComponent implements OnInit {
   }
 
   onMouseEnter(): void {
-    if (this.imageSequenceCount > 1) {
+    console.log(this.currentImageIndex);
+    console.log(this.imageSequenceCount);
+    if(this.currentImageIndex === this.imageSequenceCount && this.imageSequenceCount > 0){
+      this.direction = 1;
+      this.currentImageIndex = 0;
+      this.startAnimation();
+    }
+    else if (this.imageSequenceCount >= 1) {
+      this.direction = 1;
+      this.startAnimation();
+    }
+    else if(this.currentImageIndex === 0){
       this.direction = 1;
       this.startAnimation();
     }
@@ -40,12 +51,13 @@ export class ImageSequenceAnimatorComponent implements OnInit {
   }
 
   private startAnimation(): void {
-    this.stopAnimation();
+    // this.stopAnimation();
     this.intervalId = setInterval(() => {
       this.currentImageIndex += this.direction;
       if (this.currentImageIndex >= this.imageSequenceCount || this.currentImageIndex < 1) {
         this.direction = -this.direction; // Reverse the direction
         this.currentImageIndex = Math.max(1, Math.min(this.currentImageIndex, this.imageSequenceCount));
+        console.log('Stopping Animation');
         this.stopAnimation();
       }
       this.updateImageSrc();
@@ -57,6 +69,7 @@ export class ImageSequenceAnimatorComponent implements OnInit {
   }
 
   private updateImageSrc(): void {
+    console.log('updating image src');
     this.imgSrc = `/assets/images/person/${this.personId}/${this.personId}-${this.currentImageIndex}.jpg`;
   }
 

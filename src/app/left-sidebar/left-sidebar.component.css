@@ -27,3 +27,7 @@
 .left-sidebar li.active, .left-sidebar li:hover{
   background-color: #3b82f6;
 }
+
+.left-sidebar li > a{
+  display: block;
+}

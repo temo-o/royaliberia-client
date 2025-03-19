@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 interface Pokemon {
-  id: number,
-  name: string,
-  type: string,
-  isCool: boolean
+  id: number;
+  name: string;
+  type: string;
+  isCool: boolean;
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
   pokemons: Pokemon[] = [
@@ -18,16 +18,14 @@ export class AppComponent {
       id: 1,
       name: "Poke1",
       type: "Electric",
-      isCool: true
+      isCool: true,
     },
     {
       id: 2,
       name: "Poke2",
       type: "Sworded",
-      isCool: false
-    }
-  ]
-  constructor() {
-
-  }
+      isCool: false,
+    },
+  ];
+  constructor() {}
 }

@@ -30,7 +30,7 @@ export interface King {
 @Component({
   selector: 'app-tree-node',
   templateUrl: './tree-node.component.html',
-  styleUrls: ['./tree-node.component.css']
+  styleUrls: ['./tree-node.component.css'],
 })
 export class TreeNodeComponent {
   kings: King[] = [];
@@ -44,15 +44,15 @@ export class TreeNodeComponent {
   }
 
   fetchData(): void {
-    this.http.get<King[]>('http://localhost:8080').subscribe(
-      response => {
-        // Sort the response array by the 'depth' property in ascending order
-        // this.kings = response.sort((a, b) => a.depth - b.depth);
+    this.http.get<King[]>('http://localhost:8080').subscribe({
+
+      next: (response) => {
         this.kings = response;
-      },
-      error => {
+      } ,
+      error: (error) => {
         console.error('Error fetching data', error);
       }
+    }
     );
   }
   

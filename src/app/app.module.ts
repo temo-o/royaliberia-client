@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TreeNodeComponent } from './tree-node/tree-node.component';
 
@@ -10,16 +9,16 @@ import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ImageSequenceAnimatorComponent } from './image-sequence-animator/image-sequence-animator.component';
 import { TimelineComponent } from './timeline/timeline.component';
-
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AboutComponent } from './about/about.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
     TreeNodeComponent,
-    LeftSidebarComponent,
     ImageSequenceAnimatorComponent,
-    TimelineComponent
+    TimelineComponent,
+    AppComponent,
+    LeftSidebarComponent,
   ],
   imports: [
     BrowserModule,

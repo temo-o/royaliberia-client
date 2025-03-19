@@ -6,6 +6,7 @@ import {navbarData} from './nav-data';
   templateUrl: './left-sidebar.component.html',
   styleUrls: ['./left-sidebar.component.css']
 })
+
 export class LeftSidebarComponent {
   navData = navbarData;
   constructor() {
